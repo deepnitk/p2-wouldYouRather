@@ -1,6 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
+import Dashboard from './Dashboard';
+import Question from './Question'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Nav from './Nav'
+import Login from './Login'
 
 class App extends Component {
 
@@ -10,9 +15,19 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        Starter Code
-      </div>
+      <Router>
+				<Fragment>
+					<div className='container'>
+						<Nav />
+							<div className="main-content"> 
+								<Switch>
+                <Route path="/" exact component={Login}/>
+								<Route path='/dashboard' exact component={Dashboard} />
+								</Switch>
+							</div>
+					</div>
+				</Fragment>
+			</Router>
     )
   }
 }
