@@ -9,6 +9,7 @@ import Login from './Login'
 import '../App.css';
 import Leaderboard from './Leaderboard'
 import ProtectedRoute from './ProtectedRoute'
+import NewQuestion from './NewQuestion'
 
 class App extends Component {
 
@@ -27,6 +28,7 @@ class App extends Component {
                 <Route path="/" exact component={Login}/>
 								<ProtectedRoute path='/dashboard' exact component={Dashboard} />
                 <ProtectedRoute path='/leaderboard' component={Leaderboard} />
+                <ProtectedRoute path='/add' exact component={NewQuestion} />
 								</Switch>
 							</div>
 					</div>
