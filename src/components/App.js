@@ -11,6 +11,7 @@ import ProtectedRoute from './ProtectedRoute'
 import NewQuestion from './NewQuestion'
 import QuestionDetail from './QuestionDetail'
 import NotFound from './NotFound'
+import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
 
@@ -22,6 +23,7 @@ class App extends Component {
     return (
       <Router>
 				<Fragment>
+        <LoadingBar />
 					<div className='container'>
 						<Nav />
 							<div className="main-content"> 
