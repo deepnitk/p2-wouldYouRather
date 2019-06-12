@@ -6,6 +6,7 @@ import Question from './Question'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Nav from './Nav'
 import Login from './Login'
+import '../App.css';
 
 class App extends Component {
 
