@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Nav from './Nav'
 import Login from './Login'
 import '../App.css';
+import Leaderboard from './Leaderboard'
+import ProtectedRoute from './ProtectedRoute'
 
 class App extends Component {
 
@@ -23,7 +25,8 @@ class App extends Component {
 							<div className="main-content"> 
 								<Switch>
                 <Route path="/" exact component={Login}/>
-								<Route path='/dashboard' exact component={Dashboard} />
+								<ProtectedRoute path='/dashboard' exact component={Dashboard} />
+                <ProtectedRoute path='/leaderboard' component={Leaderboard} />
 								</Switch>
 							</div>
 					</div>
