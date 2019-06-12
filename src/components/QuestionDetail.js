@@ -27,6 +27,7 @@ class QuestionDetail extends Component {
     render() {
         const { question, author, answered, answer, votesOptionOne, votesOptionTwo, totalVotes, percentageOptionOne, percentageOptionTwo } = this.props;
         const { selectedAnswer } = this.state;
+        const avatar = author ? author.avatarURL : 'placeholder.png'
 
         if (!question) {
             return <Redirect to="/not-found"/>
@@ -41,7 +42,7 @@ class QuestionDetail extends Component {
                 )}
                 <div className="tile-body">
                     <div className="tile-left">
-                        <img alt="avatar" className="avatar" src={`/${author.avatarURL}`}/>
+                        <img alt="avatar" className="avatar" src={avatar}/>
                     </div>
                     
                     {!answered ? (

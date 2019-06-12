@@ -5,14 +5,14 @@ class Leaderboard extends Component {
     render() {
         const { users} = this.props
         const sortedUsers = users.sort( (a, b) => b.totalScore - a.totalScore)
-
+        //const avatar = author ? author.avatarURL : 'placeholder.png'
         return (
             <ul className="users-list">
             {sortedUsers.map((user) => (
                 <li key={user.id}>
                     <div className="tile-item">
                     <div className="tile-section section-1">
-                        <img alt="avatar" className="avatar" src={`/${user.avatarURL}`}/>
+                        <img alt="avatar" className="avatar" src={user.avatarURL}/>
                     </div>
                     <div className="tile-section section-2">
                         <div className="user-name">{user.name}</div>

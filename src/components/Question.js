@@ -4,12 +4,13 @@ import { connect } from 'react-redux'
 class Question extends Component {
     render() {
         const { question, author } = this.props;
+        const avatar = author ? author.avatarURL : 'placeholder.png'
         return (
             <div className="tile-item">
                 <div className="tile-header">{author.name} asks</div>
                 <div className="tile-body">
                     <div className="tile-left">
-                        <img alt="avatar" className="avatar" src={`/${author.avatarURL}`}/>
+                        <img alt="avatar" className="avatar" src={avatar}/>
                     </div>
                     
                     <div className="question-body">
